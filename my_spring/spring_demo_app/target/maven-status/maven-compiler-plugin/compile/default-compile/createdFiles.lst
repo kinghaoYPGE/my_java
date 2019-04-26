@@ -1,0 +1,9 @@
+com/myspring/annotation/App.class
+com/myspring/demo/loosely_coupled/IOutputGenerator.class
+com/myspring/innerbean/Customer.class
+com/myspring/demo/loosely_coupled/OutputHelper.class
+com/myspring/demo/helloworld/HelloWorld.class
+com/myspring/annotation/IAnimal.class
+com/myspring/demo/loosely_coupled/JsonOutputGenerator.class
+com/myspring/demo/loosely_coupled/CsvOutputGenerator.class
+com/myspring/demo/App.class

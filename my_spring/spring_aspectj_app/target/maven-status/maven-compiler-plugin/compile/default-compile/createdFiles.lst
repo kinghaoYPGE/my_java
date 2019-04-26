@@ -1,0 +1,5 @@
+com/myspring/aspectj/App.class
+com/myspring/aspectj/dao/CustomerDao.class
+com/myspring/aspectj/aspect/PointcutsDefinition.class
+com/myspring/aspectj/dao/ICustomerDao.class
+com/myspring/aspectj/aspect/LoggingAspect.class

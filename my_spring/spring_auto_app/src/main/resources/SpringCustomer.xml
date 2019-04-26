@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean id="customerService" class="com.myspring.auto.services.CustomerService">
+        <property name="customerDao" ref="customerDao" />
+    </bean>-->
+    <!--等同于上面ref用法-->
+    <bean id="customerService" class="com.myspring.auto.services.CustomerService" autowire="byName"/>
+
+    <bean id="customerDao" class="com.myspring.auto.dao.CustomerDao" />
+
+</beans>

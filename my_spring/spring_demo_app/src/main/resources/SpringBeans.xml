@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="helloBean" class="com.myspring.demo.helloworld.HelloWorld">
+        <property name="name" value="spring first app"/>
+    </bean>
+
+    <bean id="fileNameGenerator" class="com.myspring.bean.FileNameGenerator">
+        <property name="name" value="spring bean from ioc"/>
+        <property name="type" value="txt"/>
+    </bean>
+
+    <bean id="customerBean" class="com.myspring.innerbean.Customer">
+        <property name="person">
+          <bean class="com.myspring.innerbean.Person">
+            <property name="name" value="zhangsan"/>
+            <property name="address" value="shanghai"/>
+            <property name="age" value="20"/>
+          </bean>
+        </property>
+    </bean>
+    <bean id="personBean" class="com.myspring.innerbean.Person">
+      <property name="name" value="zhangsan"/>
+      <property name="address" value="shanghai"/>
+      <property name="age" value="20"/>
+    </bean>
+    <!--Spring中默认是单例模式-->
+    <bean id="customerServiceBean" class="com.myspring.customer.services.CustomerService" scope="prototype" />
+</beans>

@@ -1,0 +1,1 @@
+mvn archetype:generate -DgroupId=com.myspring.web -DartifactId=spring_webmvc_app -DarchetypeArtifactId=maven-archetype-webapp
