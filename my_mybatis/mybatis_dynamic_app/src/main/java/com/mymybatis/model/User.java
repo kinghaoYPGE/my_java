@@ -1,4 +1,4 @@
-pacakge com.mymybatis.model;
+package com.mymybatis.model;
 
 public class User {
 
