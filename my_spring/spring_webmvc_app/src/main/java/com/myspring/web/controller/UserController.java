@@ -30,7 +30,7 @@ public class UserController {
     return mv;
   }
 
-  @RequestMapping(value="/login")
+  @RequestMapping(value="/index")
   public String login(/*@RequestParam("username")*/ String username, Model model) {
     model.addAttribute("username", username);
     return "index";

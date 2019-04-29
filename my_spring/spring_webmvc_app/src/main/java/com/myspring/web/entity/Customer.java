@@ -1,9 +1,15 @@
 package com.myspring.web.entity;
 
+import javax.validation.constraints.Pattern;
+
+import javax.validation.constraints.Email;
+
 public class Customer extends User {
   private static final long serialVersionUID = 1L;
 
+  @Pattern(regexp = "^1[3|4|5|7|8][0-9]{9}$", message = "Please enter the correct format of the phone number")
   private String phone;
+  @Email(message = "Please enter a valid email address")
   private String email;
 
   /**

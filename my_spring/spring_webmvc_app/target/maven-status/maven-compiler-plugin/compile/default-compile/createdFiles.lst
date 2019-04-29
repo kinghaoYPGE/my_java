@@ -1,1 +1,4 @@
 com/myspring/web/entity/Customer.class
+com/myspring/web/controller/UserController.class
+com/myspring/web/entity/User.class
+com/myspring/web/controller/ValidationController.class

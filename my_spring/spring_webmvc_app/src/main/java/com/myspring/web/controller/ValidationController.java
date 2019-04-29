@@ -2,7 +2,8 @@ package com.myspring.web.controller;
 
 
 import com.myspring.web.entity.Customer;
-
+import javax.validation.Valid;
+import org.springframework.validation.Errors;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +22,10 @@ public class ValidationController {
 
     // 注册请求的响应方法
     @RequestMapping(value = "/register", method={RequestMethod.GET, RequestMethod.POST})
-    public String register(@ModelAttribute("customer") Customer customer, Model model) {
-      model.addAttribute("customer", customer);
-      return "register";
+    public String register(@Valid @ModelAttribute("customer") Customer customer, Errors errors) {
+      System.out.println();
+      System.out.println(errors.toString());
+      // model.addAttribute("customer", customer);
+      return "register_validation";
     }
 }
