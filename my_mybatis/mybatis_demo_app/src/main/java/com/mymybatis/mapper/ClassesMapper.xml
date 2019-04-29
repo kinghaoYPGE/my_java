@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mymybatis.mapper.ClassesMapper">
+
+    <select id="selectClassById" parameterType="int" resultMap="classmap">
+        select * from tb_class c, tb_head_teacher t  where c.c_ht_id = t.ht_id and c.c_id=#{id}
+    </select>
+
+    <select id="selectClassAndStudentsById" parameterType="int" resultMap="classmap">
+         select c.c_id,c.c_name,s.s_id,s.s_name,s.s_sex,s.s_age from tb_class c left outer join tb_student s on c.c_id = s.s_c_id where c.c_id=#{id}
+    </select>
+
+    <!-- resultMap:映射实体类和字段之间的一一对应的关系 -->
+    <resultMap id="teachermap" type="HeadTeacher">
+        <id property="id" column="ht_id"/>
+        <result property="name" column="ht_name" />
+        <result property="age" column="ht_age" />
+    </resultMap>
+
+    <!-- 一对多关联映射：collection -->
+    <resultMap id="studentmap" type="Student">
+        <id property="id" column="s_id" />
+        <result property="name" column="s_name" />
+        <result property="sex" column="s_sex" />
+        <result property="age" column="s_age" />
+    </resultMap>
+
+    <resultMap id="classmap" type="Classes">
+        <id property="id" column="c_id" />
+        <result property="name" column="c_name" />
+        <!-- 一对一关联映射：association -->
+        <!--<association property="teacher" javaType="HeadTeacher">
+            <id property="id" column="ht_id" />
+            <result property="name" column="ht_name" />
+            <result property="age" column="ht_age" />
+        </association>-->
+        <association property="teacher" column="c_ht_id" javaType="HeadTeacher" resultMap="teachermap" />
+        <!-- 一对多关联映射：collection -->
+        <!--<collection property="students" ofType="Student">
+            <id property="id" column="s_id" />
+            <result property="name" column="s_name" />
+            <result property="sex" column="s_sex" />
+            <result property="age" column="s_age" />
+        </collection>-->
+        <collection property="students" ofType="Student" resultMap="studentmap" />
+    </resultMap>
+</mapper>

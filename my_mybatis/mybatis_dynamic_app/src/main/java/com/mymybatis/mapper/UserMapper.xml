@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mymybatis.mapper.UserMapper">
+    <!--开启二级缓冲-->
+    <!--<cache eviction="FIFO" flushInterval="60000" size="512" readOnly="true"/>-->
+    <!-- 自定义返回结果集 -->
+    <!--<resultMap id="userMap" type="User">
+        <id property="id" column="id" javaType="int"></id>
+        <result property="username" column="username" javaType="String"></result>
+        <result property="password" column="password" javaType="String"></result>
+        <result property="sex" column="sex" javaType="String"></result>
+        <result property="address" column="address" javaType="String"></result>
+    </resultMap>-->
+    <!-- sql 片段 -->
+    <sql id="selectAllUser">  
+        select * from user 
+    </sql> 
+    <select id="selectUserByCondition" resultType="User">
+      <include refid="selectAllUser" /> where sex = 'male'
+      <!-- if 用法 -->
+      <if user="address != null">
+        and address = #{address}
+      </if>
+      <!-- choose 用法 -->
+      <choose>
+          <when user="username != null">
+            and username like #{username}
+          </when>
+        <when user="phone != null">
+            and phone like #{phone}
+          </when>
+        <otherwise>
+            and address = 'chengdu'
+        </otherwise>
+    </choose>
+    </select>
+
+    <!-- trim 用法 -->
+    <!--trim 元素可以给自己包含的内容加上前缀（prefix）或加上后缀（suffix），也可以把包含内容的首部（prefixOverrides）或尾部（suffixOverrides）某些内容移除。-->
+    <select id="selectUserByConditionTrim" resultType="User">
+      <include refid="selectAllUser" />
+      <trim prefix="where" prefixOverrides="and |or ">
+        <if user="address != null">
+          address = #{address}
+        </if>
+        <if user="phone != null">
+          and phone like #{phone}
+        </if>
+      </trim>
+    </select>
+    
+    <!--where 元素知道只有在一个以上的 if 条件满足的情况下才去插入 where 子句，而且能够智能地处理 and 和 or 条件。-->
+    <select id="selectUserByConditionWhere" resultType="User">
+      <include refid="selectAllUser" />
+        <where>
+          <if user="address != null">
+            address = #{address}
+          </if>
+          <if user="phone != null">
+            and phone like #{phone}
+          </if>
+        </where>
+    </select>
+
+    <!--set 元素可以被用于动态包含需要更新的列，而舍去其他的。-->
+    <update id="updateUserByConditionSet">
+      update User
+      <set>
+          <if user="phone != null">phone=#{phone},</if>
+          <if user="address != null">address=#{address}</if>
+      </set>
+          where id=#{id}
+    </update>
+
+    <!--foreach 元素常用到需要对一个集合进行遍历时，在 in 语句查询时特别有用。-->
+    <select id="selectUsersByIdsForeach" resultType="User">
+      select * from user where id in
+      <foreach item="item" index="index" collection="list"
+          open="(" separator="," close=")">
+        #{item}
+      </foreach>
+    </select>
+
+    <!-- bind 用法 -->
+    <select id="selectUsersByLike" resultType="User">
+          <bind name="pattern" value="'%' + _parameter.getPhone() + '%'" />
+          select * from user where phone like #{pattern}
+    </select>
+
+</mapper>

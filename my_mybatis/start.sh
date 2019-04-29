@@ -1,0 +1,1 @@
+mvn archetype:generate -DgroupId=com.mymybatis -DartifactId=mybatis_dynamic_app -DarchetypeArtifactId=maven-archetype-quickstart

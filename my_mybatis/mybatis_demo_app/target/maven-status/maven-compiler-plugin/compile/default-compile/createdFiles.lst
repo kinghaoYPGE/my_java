@@ -1,0 +1,5 @@
+com/mymybatis/AppOne2One.class
+com/mymybatis/mapper/ClassesMapper.class
+com/mymybatis/model/User.class
+com/mymybatis/App.class
+com/mymybatis/mapper/UserMapper.class
