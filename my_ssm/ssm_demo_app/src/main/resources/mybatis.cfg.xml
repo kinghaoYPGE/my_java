@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 为JavaBean起类别名 -->
+    <typeAliases>
+        <package name="com.ssm.demo.model" />
+    </typeAliases> 
+    <!-- 通过 mapper 接口包加载整个包的映射文件 --> 
+    <mappers>
+        <package name="com.ssm.demo.mapper" />
+    </mappers>
+    <!-- 数据源，运行环境交给spring去管理 -->
+</configuration>

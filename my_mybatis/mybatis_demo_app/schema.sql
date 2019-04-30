@@ -1,5 +1,5 @@
 create database mybatis_demo_db;
-
+use mybatis_demo_db;
 create table tb_head_teacher(
 ht_id int primary key auto_increment,
 ht_name varchar(20),

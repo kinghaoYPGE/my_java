@@ -1,0 +1,5 @@
+/home/coding/workspace/my_ssm/ssm_demo_app/src/main/java/com/ssm/demo/controller/UserController.java
+/home/coding/workspace/my_ssm/ssm_demo_app/src/main/java/com/ssm/demo/model/User.java
+/home/coding/workspace/my_ssm/ssm_demo_app/src/main/java/com/ssm/demo/service/impl/UserServiceImpl.java
+/home/coding/workspace/my_ssm/ssm_demo_app/src/main/java/com/ssm/demo/service/UserService.java
+/home/coding/workspace/my_ssm/ssm_demo_app/src/main/java/com/ssm/demo/mapper/UserMapper.java
