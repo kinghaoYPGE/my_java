@@ -65,4 +65,14 @@ public class User {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public String toString() {
+        return    this.getId() + " " 
+                + this.getUsername() + " "
+                + this.getPassword() + " " 
+                + this.getSex() + " "
+                + this.getAge() + " "
+                + this.getPhone() + " "
+                + this.getAddress();
+    }
 }

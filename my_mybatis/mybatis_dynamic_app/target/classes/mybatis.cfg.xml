@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration> 
+    <properties resource="config.properties"/>
+    <!-- 为JavaBean起类别名 -->
+    <typeAliases>
+        <!--<typeAliase alias="User" type="com.mymybatis.model.User"/>-->
+        <!-- 指定一个包名起别名，将包内的 Java 类的类名作为类的类别名 -->
+        <package name="com.mymybatis.model" />
+    </typeAliases>    
+       <!-- 配置mybatis运行环境 -->
+    <environments default="development">
+        <environment id="development">
+           <!-- type="JDBC" 代表直接使用 JDBC 的提交和回滚设置 -->
+            <transactionManager type="JDBC" />
+
+            <!-- POOLED 表示支持JDBC数据源连接池 -->
+            <!-- 数据库连接池,由 Mybatis 管理 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}" />
+                <property name="url" value="${url}" />
+                <property name="username" value="${username}" />
+                <property name="password" value="${password}" />
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+      <!--<mapper resource="com/mymybatis/mapper/UserMapper.xml"/>-->
+      <!--<mapper class="com.mymybatis.mapper.UserMapper" />-->
+      <!-- 通过 mapper 接口包加载整个包的映射文件 -->
+      <package name="com.mymybatis.mapper" />
+    </mappers> 
+</configuration>

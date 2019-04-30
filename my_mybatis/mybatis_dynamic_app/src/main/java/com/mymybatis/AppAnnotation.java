@@ -9,17 +9,16 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.mymybatis.mapper.UserMapper;
+import com.mymybatis.mapper.annotation.UserMapper;
 import com.mymybatis.model.User;
 
-public class App {
+public class AppAnnotation {
     private static SqlSessionFactory sqlSessionFactory;
 
     public static void main(String[] args) {
-        // Mybatis 配置文件
+      
         String resource = "mybatis.cfg.xml";
 
-        // 得到配置文件流
         InputStream inputStream = null;
         try {
             inputStream = Resources.getResourceAsStream(resource);
@@ -27,24 +26,86 @@ public class App {
             e.printStackTrace();
         }
 
-        // 创建会话工厂，传入 MyBatis 的配置文件信息
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
-        // selectUserByCondition();
-        updateUserByConditionSet();
+        // insertUser();
+        // updateUser();
+        deleteUser();
+        // selectUserById();
+        // selectAllUser();
 
     }
 
-    // 动态条件搜索用户信息
-    private static void selectUserByCondition() {
+    // 新增用户
+    private static void insertUser(){
+        SqlSession session = sqlSessionFactory.openSession();
 
+        UserMapper mapper = session.getMapper(UserMapper.class);
+        User user = new User();
+        user.setUsername("Anne");
+        user.setPassword("Anne123");
+        user.setSex("female");
+        user.setAge(23);
+        user.setPhone("18976534652");
+        user.setAddress("shanghai");
+        try {
+            mapper.insertUser(user);
+
+            session.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.rollback();
+        }
+
+        session.close();
+    }
+
+    // 更新用户
+    private static void updateUser(){
+        SqlSession session = sqlSessionFactory.openSession();
+
+        UserMapper mapper = session.getMapper(UserMapper.class);
+        User user = null;
+        try {
+            user = mapper.selectUserById(2);
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        user.setAge(25);
+        try {
+            mapper.updateUser(user);
+            session.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.rollback();
+        }
+
+        session.close();
+    }
+
+    // 删除用户
+    private static void deleteUser(){
         SqlSession session = sqlSessionFactory.openSession();
 
         UserMapper mapper = session.getMapper(UserMapper.class);
         try {
-            User condition = new User();
-            condition.setAddress("chengdu");
-            User user = mapper.selectUserByCondition(condition);
+            mapper.deleteUser(3);
+            session.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.rollback();
+        }
+
+        session.close();
+    }
+
+    // id查询用户
+    private static void selectUserById() {
+        SqlSession session = sqlSessionFactory.openSession();
+
+        UserMapper mapper = session.getMapper(UserMapper.class);
+        try {
+            User user = mapper.selectUserById(1);
             session.commit();
             System.out.println(user);
         } catch (Exception e) {
@@ -55,31 +116,8 @@ public class App {
         session.close();
     }
 
-    // 更新用戶
-    private static void updateUserByConditionSet() {
-
-        SqlSession session = sqlSessionFactory.openSession();
-
-        UserMapper mapper = session.getMapper(UserMapper.class);
-        User user = new User();
-        user.setId(1);
-        user.setAddress("chongqing");
-        try {
-            mapper.updateUserByConditionSet(user);
-            session.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            session.rollback();
-        }
-
-        session.close();
-    }
-
-    
-
-    // 查询所有的用户信息
-    /*private static void selectAllUser() {
-
+    // 查询所有用户
+    private static void selectAllUser(){
         SqlSession session = sqlSessionFactory.openSession();
 
         UserMapper mapper = session.getMapper(UserMapper.class);
@@ -87,9 +125,7 @@ public class App {
             List<User> userList = mapper.selectAllUser();
             session.commit();
             for (User user : userList) {
-                System.out.println(user.getId() + " " + user.getUsername() + " "
-                        + user.getPassword() + " " + user.getSex() + " "
-                        + user.getAddress());
+                System.out.println(user);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -97,5 +133,5 @@ public class App {
         }
 
         session.close();
-    }*/
+    }
 }
