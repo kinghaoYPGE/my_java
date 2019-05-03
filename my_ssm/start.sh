@@ -1,1 +1,1 @@
-mvn archetype:generate -DgroupId=com.ssm.demo -DartifactId=ssm_demo_app -DarchetypeArtifactId=maven-archetype-webapp
+mvn archetype:generate -DgroupId=com.ssm.blog -DartifactId=ssm_blog_app -DarchetypeArtifactId=maven-archetype-webapp
