@@ -1,1 +1,1 @@
-mvn archetype:generate -DgroupId=com.ssm.blog -DartifactId=ssm_blog_app -DarchetypeArtifactId=maven-archetype-webapp
+mvn archetype:generate -DgroupId=com.ssm.hrms -DartifactId=ssm_hrms_app -DarchetypeArtifactId=maven-archetype-webapp
