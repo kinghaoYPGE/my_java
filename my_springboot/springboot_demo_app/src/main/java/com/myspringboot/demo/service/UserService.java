@@ -13,7 +13,8 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    @Transactional(rollbackFor = Exception.class)
+    // @Transactional(rollbackFor = Exception.class)
+    // 切换为spring aop进行事务控制
     public User save(User user) {
         // 保存实体类
         userRepository.save(user);

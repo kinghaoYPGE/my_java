@@ -30,7 +30,7 @@ public class UserTest implements ApplicationRunner {
         // 新建一个实体类
         User user = new User();
         user.setPassword("springboot");
-        user.setUsername("shiyanlou");
+        user.setUsername("test");
         // 调用包存实体类的service
         userService.save(user);
     }

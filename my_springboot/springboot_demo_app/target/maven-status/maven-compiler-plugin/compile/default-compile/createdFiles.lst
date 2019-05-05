@@ -6,3 +6,4 @@ com/myspringboot/demo/dao/UserRepository.class
 com/myspringboot/demo/service/UserService.class
 com/myspringboot/demo/controller/IndexController.class
 com/myspringboot/demo/UserTest.class
+com/myspringboot/demo/aop/SpringbootAop.class

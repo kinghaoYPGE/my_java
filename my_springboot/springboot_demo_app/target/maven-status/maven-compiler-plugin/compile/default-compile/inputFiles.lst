@@ -6,3 +6,4 @@
 /home/coding/workspace/my_springboot/springboot_demo_app/src/main/java/com/myspringboot/demo/service/UserService.java
 /home/coding/workspace/my_springboot/springboot_demo_app/src/main/java/com/myspringboot/demo/model/User.java
 /home/coding/workspace/my_springboot/springboot_demo_app/src/main/java/com/myspringboot/demo/UserTest.java
+/home/coding/workspace/my_springboot/springboot_demo_app/src/main/java/com/myspringboot/demo/aop/SpringbootAop.java
