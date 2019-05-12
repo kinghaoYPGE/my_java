@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [12/May/2019:22:27:53 +0800] "GET /seckill/list HTTP/1.1" 200 4980 http-bio-8080-exec-2 4287
+0:0:0:0:0:0:0:1 - - [12/May/2019:22:27:55 +0800] "GET /seckill/1001/detail HTTP/1.1" 200 2994 http-bio-8080-exec-3 294
+0:0:0:0:0:0:0:1 - - [12/May/2019:22:27:55 +0800] "GET /resources/script/seckill.js HTTP/1.1" 304 - http-bio-8080-exec-4 23
+0:0:0:0:0:0:0:1 - - [12/May/2019:22:27:55 +0800] "GET /seckill/now HTTP/1.1" 200 61 http-bio-8080-exec-5 110
+0:0:0:0:0:0:0:1 - - [12/May/2019:22:27:55 +0800] "POST /seckill/1001/exposer HTTP/1.1" 200 157 http-bio-8080-exec-6 30
+0:0:0:0:0:0:0:1 - - [12/May/2019:22:27:56 +0800] "POST /seckill/1001/d93cabc121380d98e288f6a214f83489/execution HTTP/1.1" 200 125 http-bio-8080-exec-7 34

@@ -6,26 +6,30 @@ import com.ssm.seckill.enums.SeckillStateEnum;
 /**
  * 封装秒杀执行结果
  */
-public class SeckillResult {
+public class SeckillExecution {
     private long seckillId; // 秒杀ID
 
-    private SeckillStateEnum seckillStateEnum;
+    private int state;
+
+    private String stateInfo;
 
     private SuccessKilled successKilled; // 秒杀成功信息
 
-    public SeckillResult(long seckillId, SuccessKilled successKilled) {
+    public SeckillExecution(long seckillId, SuccessKilled successKilled) {
         this.seckillId = seckillId;
         this.successKilled = successKilled;
     }
 
-    public SeckillResult(long seckillId, SeckillStateEnum seckillStateEnum) {
+    public SeckillExecution(long seckillId, SeckillStateEnum seckillStateEnum) {
         this.seckillId = seckillId;
-        this.seckillStateEnum = seckillStateEnum;
+        this.state = seckillStateEnum.getState();
+        this.stateInfo = seckillStateEnum.getStateInfo();
     }
 
-    public SeckillResult(long seckillId, SeckillStateEnum seckillStateEnum, SuccessKilled successKilled) {
+    public SeckillExecution(long seckillId, SeckillStateEnum seckillStateEnum, SuccessKilled successKilled) {
         this.seckillId = seckillId;
-        this.seckillStateEnum = seckillStateEnum;
+        this.state = seckillStateEnum.getState();
+        this.stateInfo = seckillStateEnum.getStateInfo();
         this.successKilled = successKilled;
     }
 
@@ -45,11 +49,19 @@ public class SeckillResult {
         this.successKilled = successKilled;
     }
 
-    public SeckillStateEnum getSeckillStateEnum() {
-        return seckillStateEnum;
+    public int getState() {
+        return state;
     }
 
-    public void setSeckillStateEnum(SeckillStateEnum seckillStateEnum) {
-        this.seckillStateEnum = seckillStateEnum;
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public String getStateInfo() {
+        return stateInfo;
+    }
+
+    public void setStateInfo(String stateInfo) {
+        this.stateInfo = stateInfo;
     }
 }
