@@ -4,6 +4,7 @@ C:\develop\Inspiration\my_java\my_ssm\ssm_seckill_app\src\main\java\com\ssm\seck
 C:\develop\Inspiration\my_java\my_ssm\ssm_seckill_app\src\main\java\com\ssm\seckill\web\SeckillController.java
 C:\develop\Inspiration\my_java\my_ssm\ssm_seckill_app\src\main\java\com\ssm\seckill\dto\SeckillExecution.java
 C:\develop\Inspiration\my_java\my_ssm\ssm_seckill_app\src\main\java\com\ssm\seckill\entity\Seckill.java
+C:\develop\Inspiration\my_java\my_ssm\ssm_seckill_app\src\main\java\com\ssm\seckill\dao\cache\RedisDao.java
 C:\develop\Inspiration\my_java\my_ssm\ssm_seckill_app\src\main\java\com\ssm\seckill\exception\IllegalSeckillException.java
 C:\develop\Inspiration\my_java\my_ssm\ssm_seckill_app\src\main\java\com\ssm\seckill\dto\Exposer.java
 C:\develop\Inspiration\my_java\my_ssm\ssm_seckill_app\src\main\java\com\ssm\seckill\enums\SeckillStateEnum.java

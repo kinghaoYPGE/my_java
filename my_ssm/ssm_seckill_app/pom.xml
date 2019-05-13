@@ -128,6 +128,30 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <!--redis依赖-->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <!--对象序列化依赖-->
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-core</artifactId>
+            <version>1.6.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-runtime</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-core</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>ssm_seckill_app</finalName>

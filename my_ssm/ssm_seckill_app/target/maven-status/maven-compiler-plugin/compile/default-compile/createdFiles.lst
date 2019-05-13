@@ -9,6 +9,7 @@ com\ssm\seckill\enums\SeckillStateEnum.class
 com\ssm\seckill\dao\SuccessKilledDao.class
 com\ssm\seckill\util\SeckillUtil.class
 com\ssm\seckill\dto\Exposer.class
+com\ssm\seckill\dao\cache\RedisDao.class
 com\ssm\seckill\dto\SeckillExecution.class
 com\ssm\seckill\exception\SeckillUnexistedException.class
 com\ssm\seckill\service\impl\SeckillServiceImpl.class

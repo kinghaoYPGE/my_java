@@ -50,4 +50,17 @@ public class SeckillServiceImplTest {
             logger.error(e.getMessage());
         }
     }
+
+    @Test
+    public void executeSeckillProcedure() {
+        Exposer exposer = seckillService.exportSeckillUrl(1000l);
+        logger.info(exposer.toString());
+        try {
+            SeckillExecution seckillExecution = seckillService.executeSeckillProcedure(1000l, 13890876543L, exposer.getMd5());
+        } catch (SeckillException e) {
+            logger.warn(e.getMessage());
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+        }
+    }
 }

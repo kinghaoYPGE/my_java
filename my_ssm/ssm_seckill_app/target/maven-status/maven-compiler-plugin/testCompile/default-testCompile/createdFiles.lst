@@ -1,0 +1,4 @@
+com\ssm\seckill\dao\cache\RedisDaoTest.class
+com\ssm\seckill\dao\SeckillDaoTest.class
+com\ssm\seckill\dao\SuccessKilledDaoTest.class
+com\ssm\seckill\service\impl\SeckillServiceImplTest.class

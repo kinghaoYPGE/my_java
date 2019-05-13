@@ -94,7 +94,7 @@ public class SeckillController {
             return new SeckillResult<SeckillExecution>(false, "未注册");
         }
         try {
-            SeckillExecution seckillExecution = seckillService.executeSeckill(seckillId, phone, md5);
+            SeckillExecution seckillExecution = seckillService.executeSeckillProcedure(seckillId, phone, md5);
             return new SeckillResult<SeckillExecution>(true, seckillExecution);
         } catch (SeckillUnexistedException e) {
             logger.error(e.getMessage(), e);
