@@ -1,0 +1,1 @@
+mvn archetype:generate -DgroupId=com.sso.a -DartifactId=sso_a_app -DarchetypeArtifactId=maven-archetype-quickstart
