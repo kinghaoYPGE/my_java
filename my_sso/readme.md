@@ -1,4 +1,4 @@
-``## 单点登陆(SSO)
+## 单点登陆(SSO)
 
 SSO(Single Sign On)，单点登录，简单来说就是在一个具有多个子系统的系统中，只用登录一个子系统，然后访问其他子系统时不需要再次登录，即“一次登录，多处访问”，能够有效的提升用户体验。
 
@@ -26,4 +26,11 @@ SSO(Single Sign On)，单点登录，简单来说就是在一个具有多个子�
 
 ![img](https://images.gitee.com/uploads/images/2019/0526/204538_3d77aa5a_1537128.png)
 
-注意：在测试过程中发现cookie写入的都是二级域名，例如a.test.com而不是test.com，这导致其他系统无法共享cookie而导致单点登录失败，解决办法是直接设置domain为.test.com即可
+注意：在测试过程中发现cookie写入的都是二级域名，例如a.test.com而不是test.com，这导致其他系统无法共享cookie而导致单点登录失败，解决办法是设置domain为.test.com即可
+
+
+
+### 2 CAS框架介入
+
+TODO
+

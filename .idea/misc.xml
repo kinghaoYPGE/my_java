@@ -2,11 +2,18 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/my_ssm/ssm_seckill_app" />
+    <file type="web" url="file://$PROJECT_DIR$/my_sso/sso_server_app" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/my_ssm/ssm_seckill_app/pom.xml" />
+        <option value="$PROJECT_DIR$/my_springboot/springboot_seckill_app/pom.xml" />
+        <option value="$PROJECT_DIR$/my_springboot/springboot_ajax_app/pom.xml" />
+        <option value="$PROJECT_DIR$/my_sso/sso_server_app/pom.xml" />
+        <option value="$PROJECT_DIR$/my_sso/sso_a_app/pom.xml" />
+        <option value="$PROJECT_DIR$/my_sso/sso_b_app/pom.xml" />
+        <option value="$PROJECT_DIR$/my_springboot/springboot_jxl_app/pom.xml" />
       </list>
     </option>
   </component>

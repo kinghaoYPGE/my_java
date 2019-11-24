@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html;charset=UTF-8"/>
+</head>
+<body>
+<h2>菜单</h2>
+<table border="1" bgcolor="#f0ffff">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>菜名</th>
+        <th>单价</th>
+        <th>口味</th>
+    </tr>
+    </thead>
+    <tbody th:each="menu : ${menuList}">
+    <tr>
+        <td th:text="${menu.id}"></td>
+        <td th:text="${menu.name}"></td>
+        <td th:text="${menu.price}"></td>
+        <td th:text="${menu.flavor}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

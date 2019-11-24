@@ -1,1 +1,1 @@
-mvn archetype:generate -DgroupId=com.myspringboot.mybatis -DartifactId=springboot_mybatis_app -DarchetypeArtifactId=maven-archetype-quickstart
+mvn archetype:generate -DgroupId=com.myspringboot.ajax -DartifactId=springboot_ajax_app -DarchetypeArtifactId=maven-archetype-quickstart

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Save</title>
+</head>
+<body>
+    <form action="/hello/valid/save" method="post">
+        <table>
+            <tr><td th:text="${error}"></td></tr>
+
+            <tr>
+                <th>学生ID</th>
+                <th>学生姓名</th>
+                <th>学生年龄</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="id"  /><br/></td>
+                <td><input type="text" name="name" /><br/></td>
+                <td><input type="text" name="age" /><br/></td>
+            </tr>
+        </table>
+        <input type="submit" value="提交"/>
+    </form>
+</body>
+</html>

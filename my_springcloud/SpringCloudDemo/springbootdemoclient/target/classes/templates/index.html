@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>index</th>
+        <th>count</th>
+        <th>学生ID</th>
+        <th>学生姓名</th>
+        <th>学生年龄</th>
+    </tr>
+    <tr th:each="student,stat:${list}" th:style="'background-color:'+@{${stat.odd}?'#F2F2F2'}">
+        <td th:text="${stat.index}"></td>
+        <td th:text="${stat.count}"></td>
+        <td th:text="${student.id}"></td>
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.age}"></td>
+        <td>
+            <a th:href="@{/hello/find/{id}(id=${student.id})}">修改</a>
+            <a th:href="@{/hello/delete/{id}(id=${student.id})}">删除</a>
+        </td>
+    </tr>
+</table>
+<a href="/hello/redirect/save">添加学生</a>
+</body>
+</html>

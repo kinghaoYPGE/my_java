@@ -6,11 +6,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springboot_ajax_app" />
+        <module name="springboot_jxl_app" />
+        <module name="springboot_seckill_app" />
         <module name="ssm_seckill_app" />
+        <module name="sso_a_app" />
+        <module name="sso_b_app" />
+        <module name="sso_server_app" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="springboot_ajax_app" target="1.8" />
+      <module name="springboot_jxl_app" target="1.5" />
+      <module name="springboot_seckill_app" target="1.8" />
       <module name="ssm_seckill_app" target="1.5" />
+      <module name="sso_a_app" target="1.8" />
+      <module name="sso_b_app" target="1.8" />
+      <module name="sso_server_app" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

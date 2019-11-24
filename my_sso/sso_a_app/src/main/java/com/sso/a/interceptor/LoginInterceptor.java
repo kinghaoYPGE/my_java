@@ -35,7 +35,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             ticket = request.getParameter("ticket");
         }
         if (StringUtils.isEmpty(ticket)) {
-            logger.debug("非法请求, 重定向到登陆页面");
+            logger.debug("重定向到登陆页面");
             response.sendRedirect(AppConstant.SSO_URL + "loginPage?originUrl=" +
                     request.getRequestURL() + "&uuid=" + uuid);
             return false;

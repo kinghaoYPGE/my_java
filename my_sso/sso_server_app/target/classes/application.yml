@@ -5,6 +5,3 @@ spring:
     database: 0
     host: localhost
     port: 6379
-    pool:
-      max-active: 8
-      max-wait: -1

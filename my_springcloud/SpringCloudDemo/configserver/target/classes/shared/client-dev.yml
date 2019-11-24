@@ -1,0 +1,15 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: client
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+    instance:
+      prefer-ip-address: true
+spring:
+  thymeleaf:
+    prefix: classpath:/static/
+    suffix: .html

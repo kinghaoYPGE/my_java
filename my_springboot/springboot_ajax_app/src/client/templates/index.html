@@ -2,9 +2,131 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQueryAjax异步请求</title>
+    <link href="https://cdn.bootcss.com/jasmine/3.4.0/jasmine.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <!--jasmine 前端测试插件 -->
+    <script src="https://cdn.bootcss.com/jasmine/3.4.0/jasmine.min.js"></script>
+    <script src="https://cdn.bootcss.com/jasmine/3.4.0/jasmine-html.min.js"></script>
+    <script src="https://cdn.bootcss.com/jasmine/3.4.0/boot.min.js"></script>
+    <!-- jquery cookie 插件 -->
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 </head>
 <body>
-$END$
+<!--<div id="app">-->
+    <!--<button id="ajaxBtn">发送异步请求</button>-->
+    <!--<p id="ajaxResult"></p>-->
+<!--</div>-->
+<script>
+    // var app = $('#ajaxBtn');
+    // app.bind('click', function() {
+    //     // 发送异步请求, load方式
+    //     var result = $('#ajaxResult');
+    //     var url = 'http://localhost:8089/ajax/get1';
+    //     // getJson方式
+    //     $.getJSON(url, {}, function(result) {
+    //         console.log('result: ' + result);
+    //     });
+    // });
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000; // 每一个测试用例的时间
+    var base_url = '/ajaxserver';  // 调用方采用反向代理隐藏跨域
+
+    describe('ajax 跨域问题', function () {
+        it('get1请求', function (done) {
+            var result = {
+                code: -1
+            };
+            $.getJSON(base_url + '/get1').then(function (jsonObj) {
+                result = jsonObj;
+            });
+
+            setTimeout(function () {
+               expect(result['code']).toEqual(200);
+               done();
+            }, 100);
+        });
+        it('jsonp请求', function (done) {
+            var result;
+            $.ajax({
+                url: base_url + '/get1',
+                dataType: 'jsonp',
+                cache: true, // 支持缓存jsonp的script请求
+                // type: 'post', // jsonp只支持get请求
+                success: function (jsonObj) {
+                    result = jsonObj;
+                }
+            });
+
+            setTimeout(function () {
+                expect(result['code']).toEqual(200);
+                done();
+            }, 100);
+        });
+
+        it('postJson请求', function (done) {
+            var result;
+            $.ajax({
+                url: base_url + '/postJson',
+                type: 'post',
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify({'name': 'zhangsan'}),
+                success: function (jsonObj) {
+                    result = jsonObj;
+                }
+            });
+            setTimeout(function () {
+                expect(result['data']).toEqual('zhangsan');
+                done();
+            }, 100);
+        });
+        it('getCookie1请求', function (done) {
+            // 设置cookie, 注意这里设置的其实是是被调用方的cookie
+            var cookie1 = $.cookie('cookie1');
+            if (!cookie1) {
+                $.cookie('cookie1', 'test', {expires:1, path:'/ajax'});
+            }
+            var result;
+            $.ajax({
+                url: base_url + '/getCookie',
+                type: 'get',
+                xhrFields: {
+                    withCredentials: true // 允许ajax请求携带cookie
+                },
+                success: function (jsonObj) {
+                    result = jsonObj;
+                }
+            });
+            setTimeout(function () {
+                expect(result['data']).toEqual('test');
+                done();
+            }, 100);
+        });
+        // ajax发送自定义头信息请求
+        it('getHeader请求', function (done) {
+            var result;
+            $.ajax({
+                url: base_url + '/getHeader',
+                type: 'get',
+                headers: {
+                    'x-header1': 'header1'
+                },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('x-header2', 'header2');
+                },
+                success: function (jsonObj) {
+                    result = jsonObj;
+                }
+            });
+            setTimeout(function () {
+                expect(result['data']).toEqual('header1 header2');
+                done();
+            }, 100);
+        });
+
+    });
+</script>
 </body>
 </html>

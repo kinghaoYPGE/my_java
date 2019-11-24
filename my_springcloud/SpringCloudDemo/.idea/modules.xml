@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SpringCloudDemo.iml" filepath="$PROJECT_DIR$/SpringCloudDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client/client.iml" filepath="$PROJECT_DIR$/client/client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configserver/configserver.iml" filepath="$PROJECT_DIR$/configserver/configserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaclient/eurekaclient.iml" filepath="$PROJECT_DIR$/eurekaclient/eurekaclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaserver/eurekaserver.iml" filepath="$PROJECT_DIR$/eurekaserver/eurekaserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/feign/feign.iml" filepath="$PROJECT_DIR$/feign/feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hystrix/hystrix.iml" filepath="$PROJECT_DIR$/hystrix/hystrix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/menu/menu.iml" filepath="$PROJECT_DIR$/menu/menu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order/order.iml" filepath="$PROJECT_DIR$/order/order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/resttemplate/resttemplate.iml" filepath="$PROJECT_DIR$/resttemplate/resttemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ribbon/ribbon.iml" filepath="$PROJECT_DIR$/ribbon/ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springbootdemo/springbootdemo.iml" filepath="$PROJECT_DIR$/springbootdemo/springbootdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springbootdemoclient/springbootdemoclient.iml" filepath="$PROJECT_DIR$/springbootdemoclient/springbootdemoclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zipkin/zipkin.iml" filepath="$PROJECT_DIR$/zipkin/zipkin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zipkinclient/zipkinclient.iml" filepath="$PROJECT_DIR$/zipkinclient/zipkinclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul/zuul.iml" filepath="$PROJECT_DIR$/zuul/zuul.iml" />
+    </modules>
+  </component>
+</project>
