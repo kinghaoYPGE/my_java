@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [01/Feb/2020:20:14:56 +0800] "GET / HTTP/1.1" 200 13680 http-bio-8081-exec-1 63
+0:0:0:0:0:0:0:1 - - [01/Feb/2020:20:14:56 +0800] "GET /css/index.css HTTP/1.1" 200 197892 http-bio-8081-exec-3 18
+0:0:0:0:0:0:0:1 - - [01/Feb/2020:20:14:56 +0800] "GET /js/axios.js HTTP/1.1" 200 44338 http-bio-8081-exec-4 48
+0:0:0:0:0:0:0:1 - - [01/Feb/2020:20:14:56 +0800] "GET /js/vue.js HTTP/1.1" 200 300250 http-bio-8081-exec-2 152
+0:0:0:0:0:0:0:1 - - [01/Feb/2020:20:14:56 +0800] "GET /js/index.js HTTP/1.1" 200 539862 http-bio-8081-exec-5 434
+0:0:0:0:0:0:0:1 - - [01/Feb/2020:20:14:56 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8081-exec-8 4
+0:0:0:0:0:0:0:1 - - [01/Feb/2020:20:14:57 +0800] "GET /list HTTP/1.1" 200 396 http-bio-8081-exec-9 952
+0:0:0:0:0:0:0:1 - - [01/Feb/2020:20:14:57 +0800] "GET /css/fonts/element-icons.woff HTTP/1.1" 404 1007 http-bio-8081-exec-9 15
+0:0:0:0:0:0:0:1 - - [01/Feb/2020:20:14:57 +0800] "GET /css/fonts/element-icons.ttf HTTP/1.1" 200 9916 http-bio-8081-exec-9 13
+0:0:0:0:0:0:0:1 - - [01/Feb/2020:20:15:46 +0800] "GET /download?id=1 HTTP/1.1" 200 76989 http-bio-8081-exec-9 570

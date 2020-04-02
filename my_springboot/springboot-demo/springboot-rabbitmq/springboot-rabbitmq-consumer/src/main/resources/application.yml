@@ -1,0 +1,16 @@
+server:
+  port: 9091
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    # 消费端配置
+    listener:
+      simple:
+        concurrency: 5
+        max-concurrency: 10
+        prefetch: 1 # 限流
+        acknowledge-mode: manual # 手动签收消息

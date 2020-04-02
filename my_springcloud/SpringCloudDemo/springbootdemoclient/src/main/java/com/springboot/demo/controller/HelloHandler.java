@@ -1,8 +1,11 @@
 package com.springboot.demo.controller;
 
+import com.springboot.demo.repository.StudentRepository;
+import com.springboot.demo.repository.UserRepository;
 import com.springboot.demo.view.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -12,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -23,6 +27,12 @@ public class HelloHandler {
 
     @Value("${provider.url}")
     private String providerUrl;
+
+    @Autowired
+    private StudentRepository studentRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @GetMapping("/index")
     public ModelAndView index() {
@@ -79,6 +89,22 @@ public class HelloHandler {
     @GetMapping("/redirect/{location}")
     public String toPage(@PathVariable("location") String location) {
         return location;
+    }
+
+    @GetMapping("/jpa/list")
+    public ModelAndView list() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("index");
+        mv.addObject("list", studentRepository.findAll().iterator());
+        return mv;
+    }
+
+    @GetMapping("/jdbc/list")
+    public ModelAndView list2() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("index");
+        mv.addObject("list", userRepository.findAll());
+        return mv;
     }
 
 }

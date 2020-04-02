@@ -1,0 +1,17 @@
+server:
+  port: 8070
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/springboot-demo?serverTimezone=UTC
+  dubbo:
+    application:
+      name: user-service-producer
+    server: true
+    registry:
+      address: zookeeper://127.0.0.1:2181
+    protocol:
+      name: dubbo
+      port: 20880

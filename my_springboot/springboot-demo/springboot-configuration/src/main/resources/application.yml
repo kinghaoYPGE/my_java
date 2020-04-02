@@ -1,0 +1,7 @@
+config:
+  way: yaml  # 配置方式
+spring:
+  profiles:
+    active: dev
+server:
+  port: 8090

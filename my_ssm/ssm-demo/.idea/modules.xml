@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ssm-demo.iml" filepath="$PROJECT_DIR$/ssm-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-resume/ssm-resume.iml" filepath="$PROJECT_DIR$/ssm-resume/ssm-resume.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-seckill/ssm-seckill.iml" filepath="$PROJECT_DIR$/ssm-seckill/ssm-seckill.iml" />
+    </modules>
+  </component>
+</project>

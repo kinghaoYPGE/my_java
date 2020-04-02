@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springboot.demo.repository.UserRepository">
+    <select id="findAll" resultType="User">
+        select * from t_user
+    </select>
+    <select id="findById" parameterType="long" resultType="com.springboot.demo.entity.User">
+        select * from t_user where id = #{id}
+    </select>
+    <insert id="save" parameterType="com.springboot.demo.entity.User">
+        insert into t_user (id, `name`, age)
+        values (#{id}, #{name}, #{age})
+    </insert>
+    <update id="update" parameterType="com.springboot.demo.entity.User">
+        update t_user
+        <set>
+            <if test="name!=null and name!=''">
+                `name`=#{name},
+            </if>
+            <if test="age!=null and age!=''">
+                age =#{age}
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+    <delete id="deleteById" parameterType="long">
+        delete from t_user
+        where id = #{id}
+    </delete>
+</mapper>

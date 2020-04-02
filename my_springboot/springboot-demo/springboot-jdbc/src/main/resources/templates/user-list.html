@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <td>用户ID</td>
+            <td>用户名</td>
+            <td>用户年龄</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="user,stat:${list}" th:style="'background-color:'+@{${stat.odd}?'#F2F2F2'}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.age}"></td>
+            <td><a th:href="@{/user/update/{id}(id=${user.id})}">更新</a>&nbsp;
+                <a th:href="@{/user/delete/{id}(id=${user.id})}">删除</a></td>
+        </tr>
+    </tbody>
+</table>
+<a href="/user/add">添加用户</a>
+</body>
+</html>

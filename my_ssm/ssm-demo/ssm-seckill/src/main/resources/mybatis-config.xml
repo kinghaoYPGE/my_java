@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--获取主键自增ID-->
+        <setting name="useGeneratedKeys" value="true"/>
+        <!--表别名替换列名，默认就是true-->
+        <setting name="useColumnLabel" value="true"/>
+        <!--开启驼峰命名映射，如：seckill_id to seckillId-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+</configuration>

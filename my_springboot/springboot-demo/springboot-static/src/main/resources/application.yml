@@ -1,0 +1,4 @@
+spring:
+  resources:
+    # 也可以使用Java Config方式，具体看WebConfig类
+    static-locations: classpath:/static/,classpath:/upload/

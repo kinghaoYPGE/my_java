@@ -1,0 +1,16 @@
+server:
+  port: 8071
+spring:
+  dubbo:
+    application:
+      name: user-service-consumer
+    registry:
+      address: zookeeper://127.0.0.1:2181
+    protocol:
+      name: dubbo
+      port: 20880
+    consumer:
+      check: false
+    reference:
+      loadbalance: roundrobin # random leastactive
+

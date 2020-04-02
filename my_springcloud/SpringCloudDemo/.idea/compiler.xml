@@ -17,7 +17,9 @@
         <module name="resttemplate" />
         <module name="ribbon" />
         <module name="springbootdemo" />
+        <module name="springbootdemo2" />
         <module name="springbootdemoclient" />
+        <module name="springbootdemokill" />
         <module name="zipkin" />
         <module name="zipkinclient" />
         <module name="zuul" />
@@ -35,7 +37,9 @@
       <module name="resttemplate" target="1.8" />
       <module name="ribbon" target="1.8" />
       <module name="springbootdemo" target="1.8" />
+      <module name="springbootdemo2" target="1.8" />
       <module name="springbootdemoclient" target="1.8" />
+      <module name="springbootdemokill" target="1.8" />
       <module name="springbootdemowithjsp" target="1.8" />
       <module name="SpringCloudDemo" target="1.8" />
       <module name="zipkin" target="1.8" />

@@ -23,9 +23,9 @@
         <module>zipkin</module>
         <module>zipkinclient</module>
         <module>springbootdemo</module>
-        <module>springbootdemowithjsp</module>
-        <module>springbootdemowithjsp</module>
         <module>springbootdemoclient</module>
+        <module>springbootdemokill</module>
+        <module>springbootdemo2</module>
     </modules>
 
     <name>SpringCloudDemo</name>

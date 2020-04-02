@@ -1,0 +1,15 @@
+app:
+  datasource:
+    first:
+      url: jdbc:mysql://127.0.0.1:3306/springboot-demo?serverTimezone=UTC
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+    other:
+      url: jdbc:mysql://127.0.0.1:3306/springboot-demo-other?serverTimezone=UTC
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+spring:
+  jpa:
+    show-sql: true  # 打印SQL
