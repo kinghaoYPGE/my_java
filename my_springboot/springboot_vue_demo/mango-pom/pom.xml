@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.kinghao.mango</groupId>
+    <artifactId>mango-pom</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <!--为了方便统一打包，新建一个mango-pom工程，
+    这个工程依赖所有模块，负责统一进行打包（不然编译的时候需要逐个编译，工程一多很是麻烦），
+    但因我们采用的是微服务架构，每个工程模块使用的依赖版本可能都是不一样的，
+    所以这里的mango-pom与所有模块不存在实质性的父子模块关系，
+    也不由mango-pom进行统一版本和依赖管理，只是为了便利打包-->
+
+
+    <modules>
+        <module>../mango-admin</module>
+        <module>../mango-common</module>
+        <module>../mango-core</module>
+    </modules>
+
+    
+</project>

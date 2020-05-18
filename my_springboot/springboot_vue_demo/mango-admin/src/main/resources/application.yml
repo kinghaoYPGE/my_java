@@ -1,0 +1,29 @@
+# 默认数据源配置
+spring:
+  profiles:
+    active: prod
+---
+spring:
+  profiles: dev
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/spring_vue_element?characterEncoding=utf8&useSSL=false
+      username: root
+      password: 123456
+
+---
+spring:
+  profiles: prod
+  datasource:
+    name: druidDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/spring_vue_element?characterEncoding=utf8&useSSL=false
+      username: root
+      password: 123456
+      max-active: 100 # spring.datasource.druid.max-active：最大连接数
+      initial-size: 1 # 初始化大小
+      max-wait: 60000 # 获取连接等待超时时间
+      min-idle: 1
+      filters: stat,wall,config
